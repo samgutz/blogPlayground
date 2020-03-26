@@ -1,6 +1,7 @@
 
 
 using System.Collections.Generic;
+using System;
 
 namespace tmpmvc.Models
 {
@@ -8,12 +9,18 @@ namespace tmpmvc.Models
     {
         public BlogList()
         {
-            Articles = new List<Article>();
+            Articles = new Dictionary<Guid, Article>();
         }
-        public List<Article> Articles { get; set; }
+        public Dictionary<Guid, Article> Articles { get; set; }
+
     }
     public class Article
     {
+        public Article()
+        {
+            ArticleId = Guid.NewGuid();
+        }
+        public Guid ArticleId {get;set;}
         public string Author { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }

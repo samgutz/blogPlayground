@@ -1,0 +1,23 @@
+@model tmpmvc.Models.BlogList;
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Body</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var article in @Model.Articles.Values)
+        {
+            <tr>
+                <td>@article.Title</td>
+                <td>@article.Author</td>
+                <td>@article.Content</td>
+                <td><a asp-controller="Blog" asp-action="EditArticle" asp-route-id="@article.ArticleId">Edit Article</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

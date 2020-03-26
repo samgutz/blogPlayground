@@ -1,0 +1,19 @@
+@model tmpmvc.Models.Article;
+
+<form asp-controller="Blog" asp-action="AddBlog" method="post">
+    <div class="form-group">
+        <label for="Author">Author</label>
+        <input type="text" id="Author" class="form-control" asp-for="Author"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" id="Title" class="form-control" asp-for="Title"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="Content">Content</label>
+        <input type="text" id="Content" class="form-control" asp-for="Content"/>
+    </div>
+    <button class="btn btn-primary" type="submit">Save Article</button>
+</form>
